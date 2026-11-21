@@ -10,8 +10,8 @@
 <meta property="og:site_name" content="일문일도네이밍">
 <meta property="og:title" content="1분 브랜드체크 | 일문일도네이밍">
 <meta property="og:description" content="업종을 고르고 7가지 질문에 답하면 우리 브랜드의 성격, 강점, 부족한 점을 알려준다.">
-<meta property="og:url" content="https://사이트주소/brand-check/">
-<meta property="og:image" content="https://사이트주소/brand-check/og-image.png">
+<meta property="og:url" content="https://sunnieflow.github.io/brandcheck/">
+<meta property="og:image" content="https://sunnieflow.github.io/brandcheck/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <title>1분 브랜드체크 | 일문일도네이밍</title>
 <meta name="description" content="업종을 고르고 7가지 질문에 답하면 우리 브랜드의 성격, 강점, 부족한 점을 알려준다.">
@@ -86,12 +86,13 @@ p{margin:0 0 12px}
 
 <script>
 /* ===== 설정: 상담 버튼이 이동할 주소를 바꿔 주세요 ===== */
-var CONTACT_URL = "#contact";   // 예: "https://사이트주소/contact"
+var SITE = "https://headline114.com";
+var CONTACT_URL = SITE + "/";   // 카톡 채널을 만들면 채널 주소로 바꾸세요
 var BRAND_NAME  = "일문일도네이밍";
 
 /* 버튼 켜고 끄기: 사업 시작 후에 false 를 true 로 바꾸면 버튼이 다시 나타납니다 */
-var SHOW_CONTACT = false;   // "이 결과로 ... 상담받기" 버튼
-var SHOW_SHARE   = false;   // "결과 공유하기" 버튼
+var SHOW_CONTACT = true;   // "이 결과로 ... 상담받기" 버튼
+var SHOW_SHARE   = true;   // "결과 공유하기" 버튼
 /* ======================================================= */
 
 /* 조사 자동 선택: 마지막 글자 받침 유무로 이/가, 을/를 결정 */
@@ -308,7 +309,7 @@ function renderResult(){
     '</div>'+
     '<div class="diag"><b>한 줄 체크 · '+weak.n+' 보완 필요</b><br>'+WEAK[weak.k]+'</div>'+
     '<div class="stack">'+
-      (SHOW_CONTACT?'<a class="btn" href="'+CONTACT_URL+'">이 결과로 이름·슬로건·로고 패키지 상담받기</a>':'')+
+      (SHOW_CONTACT?'<a class="btn" href="'+encodeURI(CONTACT_URL)+'">네이밍·로고·홈페이지 신청하기</a>':'')+
       (SHOW_SHARE?'<button class="btn ghost" id="b-share">결과 공유하기</button>':'')+
       '<button class="btn'+((SHOW_CONTACT||SHOW_SHARE)?' ghost':'')+'" id="b-again">다시 체크하기</button>'+
     '</div>'+
